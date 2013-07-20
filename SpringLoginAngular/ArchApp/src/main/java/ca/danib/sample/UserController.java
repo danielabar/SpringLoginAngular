@@ -17,13 +17,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class UserController {
 	
 	@RequestMapping(method = RequestMethod.GET)
-	 public @ResponseBody UserTransfer getUser() {
+	 public @ResponseBody UserVO getUser() {
 		Map<String, Boolean> roles = new HashMap<String, Boolean>();
 
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 		Object principal = authentication.getPrincipal();
 		if (principal instanceof String && ((String) principal).equals("anonymousUser")) {
-			return new UserTransfer("anonymous", roles);
+			return new UserVO("anonymous", roles);
 		}
 		UserDetails userDetails = (UserDetails) principal;
 
@@ -31,7 +31,7 @@ public class UserController {
 			roles.put(authority.toString(), Boolean.TRUE);
 		}
 
-		return new UserTransfer(userDetails.getUsername(), roles);
+		return new UserVO(userDetails.getUsername(), roles);
 	 }
 
 }
