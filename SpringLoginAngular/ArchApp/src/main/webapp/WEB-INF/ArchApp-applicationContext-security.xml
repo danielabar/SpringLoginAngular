@@ -9,18 +9,24 @@
 	       http://www.springframework.org/schema/security 
 		   http://www.springframework.org/schema/security/spring-security-3.0.xsd">		   
 
-	<http auto-config='true'>
+	<http auto-config='false' disable-url-rewriting='true'>
 		<intercept-url pattern="/css/**" filters="none"/>
+		<intercept-url pattern="/js/**" filters="none"/>
 		<intercept-url pattern="/login.html*" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
 		<intercept-url pattern="/**" access="ROLE_USER" />
+		
 		<form-login 
 		    login-page='/login.html' 
-		    default-target-url='/home.html' 
+		    default-target-url='/index.html' 
 		    always-use-default-target='true' 
 			authentication-failure-url='/login.html?error=true'    
 		/>
-		<logout logout-success-url="/logout.html" />
-		<session-management invalid-session-url="/sessionTimeout.html" />
+		
+		<logout invalidate-session="true" logout-success-url="/login.html?info=success-logout" />
+		
+		<session-management invalid-session-url="/login.html?info=session-timeout">
+		    <concurrency-control max-sessions="1" error-if-maximum-exceeded="true" />
+		</session-management>
 	</http>
 
 	<!-- For demo purposes only -->

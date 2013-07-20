@@ -25,13 +25,16 @@
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
 	
-	<!-- FIXME: Should be index.html once have angular in the mix --> 
+	<listener>
+    	<listener-class>org.springframework.security.web.session.HttpSessionEventPublisher</listener-class>
+  	</listener>
+	
 	<welcome-file-list>
-		<welcome-file>login.html</welcome-file>
+		<welcome-file>index.html</welcome-file>
 	</welcome-file-list>
 	
 	<session-config>
-		<session-timeout>10</session-timeout>
+		<session-timeout>30</session-timeout>
 	</session-config>
 	
 </web-app>

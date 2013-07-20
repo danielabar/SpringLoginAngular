@@ -1,24 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="arch-app-login">
 <head>
 <meta charset="utf-8">
-<title>Architect Interview Sample Login App</title>
+<title>Spring Angular App - Login</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="author" content="Daniela Baron">
 </head>
 
-<body>
+<body ng-controller="LoginCtrl">
 <h3>Login</h3>
-<!-- TODO: Angular controller on click of submit button should go to /j_spring_security_check -->
-<form action="j_spring_security_check" method="post">
+<form ng-submit="login()">
 	<label for="j_username">Username</label>
-	<input type="text" name="j_username" id="j_username" />
+	<input ng-model="j_username" type="text" required="" />
 	<br/>
 	<label for="j_password">Password</label>
-	<input type="password" name="j_password" id="j_password"/>
+	<input ng-model="j_password" type="password" required="" />
 	<br/>
-	<input type="submit" value="Login"/>
+	<button type="submit">Login</button>
 </form>
+
+<!-- Vendor Lib -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular-cookies.js"></script>
+
+<!-- Client MVC -->
+<script src="js/arch-app-login.js"></script>
+<script src="js/controllers/LoginController.js"></script>
 </body>
 
 </html>
