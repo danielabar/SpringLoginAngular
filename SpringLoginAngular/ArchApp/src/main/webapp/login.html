@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="arch-app-login">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <title>Spring Angular App - Login</title>
@@ -7,25 +7,26 @@
 <meta name="author" content="Daniela Baron">
 </head>
 
-<body ng-controller="LoginCtrl">
+<body>
 <h3>Login</h3>
-<form ng-submit="login()">
-	<label for="j_username">Username</label>
-	<input ng-model="j_username" type="text" required="" />
-	<br/>
-	<label for="j_password">Password</label>
-	<input ng-model="j_password" type="password" required="" />
-	<br/>
-	<button type="submit">Login</button>
+<form action="j_spring_security_check" method="POST" class="form-horizontal">
+	<div class="control-group">
+		<label for="username" class="control-label">User Name:</label>
+		<div class="controls">
+			<input id="username" name="j_username" type="text" />
+		</div>
+	</div>
+	<div class="control-group">
+		<label for="password" class="control-label">Password:</label>
+		<div class="controls">
+			<input id="password" name="j_password" type="password" />
+		</div>
+	</div>
+	<div class="form-actions">
+		<input type="submit" value="Log In" class="btn btn-primary"/>
+	</div>
 </form>
 
-<!-- Vendor Lib -->
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular-cookies.js"></script>
-
-<!-- Client MVC -->
-<script src="js/arch-app-login.js"></script>
-<script src="js/controllers/LoginController.js"></script>
 </body>
 
 </html>
