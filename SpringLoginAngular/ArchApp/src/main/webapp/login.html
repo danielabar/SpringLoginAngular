@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Architect Interview Sample Login App</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Daniela Baron">
+</head>
+
+<body>
+<h3>Login</h3>
+<!-- TODO: Angular controller on click of submit button should go to /j_spring_security_check -->
+<form action="j_spring_security_check" method="post">
+	<label for="j_username">Username</label>
+	<input type="text" name="j_username" id="j_username" />
+	<br/>
+	<label for="j_password">Password</label>
+	<input type="password" name="j_password" id="j_password"/>
+	<br/>
+	<input type="submit" value="Login"/>
+</form>
+</body>
+
+</html>
