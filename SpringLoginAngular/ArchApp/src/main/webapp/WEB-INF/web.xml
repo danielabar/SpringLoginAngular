@@ -6,10 +6,24 @@
 
 	<display-name>ArchApp</display-name>
 
+	<servlet>
+		<servlet-name>restspring</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>restspring</servlet-name>
+		<url-pattern>/rest/*</url-pattern>
+	</servlet-mapping>
+	
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
-		<param-value>/WEB-INF/ArchApp-applicationContext.xml</param-value>
+		<param-value>/WEB-INF/restspring-servlet.xml</param-value>
 	</context-param>
+	
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
 	
 	<filter>
 		<filter-name>springSecurityFilterChain</filter-name>
@@ -19,22 +33,18 @@
 	<filter-mapping>
 		<filter-name>springSecurityFilterChain</filter-name>
 		<url-pattern>/*</url-pattern>
-	</filter-mapping>
+	</filter-mapping>	
 
 	<listener>
-		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+		<listener-class>org.springframework.security.web.session.HttpSessionEventPublisher</listener-class>
 	</listener>
-	
-	<listener>
-    	<listener-class>org.springframework.security.web.session.HttpSessionEventPublisher</listener-class>
-  	</listener>
-	
+
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>
 	</welcome-file-list>
-	
+
 	<session-config>
 		<session-timeout>30</session-timeout>
 	</session-config>
-	
+
 </web-app>
