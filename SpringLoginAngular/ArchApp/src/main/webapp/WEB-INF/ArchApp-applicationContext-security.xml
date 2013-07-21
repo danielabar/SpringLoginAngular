@@ -31,8 +31,7 @@
 	</http>
 	
 	<authentication-manager>
-		<!-- <authentication-provider user-service-ref="daoAuthenticationProvider" /> -->
- 		<authentication-provider user-service-ref="userDetailsService"/>
+	    <authentication-provider ref="daoAuthenticationProvider" />
 	</authentication-manager>
 
 </beans:beans>
