@@ -20,14 +20,14 @@
 		    login-page='/login.html' 
 		    default-target-url='/index.html' 
 		    always-use-default-target='true' 
-			authentication-failure-url='/login.html?error=true'    
+			authentication-failure-url='/login.html#/status/error'    
 		/>
 		
-		<logout invalidate-session="true" logout-success-url="/login.html?info=success-logout" />
+		<logout invalidate-session="true" logout-success-url="/login.html#/status/logoutsuccess" />
 		
-		<session-management invalid-session-url="/login.html?info=session-timeout">
+		<!-- <session-management invalid-session-url="/login.html?info=session-timeout">
 		    <concurrency-control max-sessions="1" error-if-maximum-exceeded="true" />
-		</session-management>
+		</session-management> -->
 	</http>
 	
 	<authentication-manager>

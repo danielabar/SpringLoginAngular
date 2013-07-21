@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="arch-app-login">
 <head>
 <meta charset="utf-8">
 <title>Spring Angular App - Login</title>
@@ -7,7 +7,7 @@
 <meta name="author" content="Daniela Baron">
 </head>
 
-<body>
+<body ng-cloak ng-controller="LoginCtrl">
 <h3>Login</h3>
 <form action="j_spring_security_check" method="POST" class="form-horizontal">
 	<div class="control-group">
@@ -27,6 +27,13 @@
 	</div>
 </form>
 
+<!-- Vendor Lib -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular-cookies.js"></script>
+
+<!-- Client MVC -->
+<script src="js/arch-app-login.js"></script>
+<script src="js/controllers/LoginController.js"></script>
 </body>
 
 </html>
