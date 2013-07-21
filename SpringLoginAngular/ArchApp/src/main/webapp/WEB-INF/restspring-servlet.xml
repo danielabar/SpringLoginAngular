@@ -17,6 +17,7 @@
 	       http://www.springframework.org/schema/security 
 		   http://www.springframework.org/schema/security/spring-security-3.0.xsd">
 		   
+    <import resource="ArchApp-applicationContext-dao.xml"/>
     <import resource="ArchApp-applicationContext-security.xml"/>	
     
     <context:component-scan 
