@@ -9,6 +9,9 @@
 
 <body ng-cloak ng-controller="LoginCtrl">
 <h3>Login</h3>
+
+<div ng-show="loginErrorMessage">{{ loginErrorMessage }}</div>
+
 <form action="j_spring_security_check" method="POST" class="form-horizontal">
 	<div class="control-group">
 		<label for="username" class="control-label">User Name:</label>
