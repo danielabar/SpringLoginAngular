@@ -29,8 +29,7 @@
 			<bean class="org.springframework.security.authentication.encoding.ShaPasswordEncoder">
 				<constructor-arg value="256" />
 				<property name="encodeHashAsBase64" value="true" />
- 				<property name="iterations" value="1" />
-<!--  				<property name="iterations" value="1000" /> -->
+  				<property name="iterations" value="1000" />
 			</bean>
 		</property>
 		<property name="saltSource">

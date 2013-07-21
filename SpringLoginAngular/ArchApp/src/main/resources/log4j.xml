@@ -17,10 +17,6 @@
 		</layout>
 	</appender>
 	
-	<category name="org.springframework.security">
-		<priority value="debug" />
-	</category>
-	
 <!-- 
 	<category name="org.springframework">
 		<priority value="debug" />
@@ -47,13 +43,14 @@
 		<priority value="debug" />
 	</category> -->
 
-<!-- 	<root>
+ 	<root>
 		<level value="INFO" />
 		<appender-ref ref="consoleAppender" />
-	</root> -->
-	<root>
+	</root>
+	
+	<!-- <root>
 		<level value="DEBUG" />
 		<appender-ref ref="consoleAppenderDebug" />
-	</root>
+	</root> -->
 
 </log4j:configuration>

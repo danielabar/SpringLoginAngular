@@ -2,8 +2,8 @@ USE `arch-app` ;
 
 INSERT INTO `users` (`username`, `password`, `enabled`)
 VALUES
-	('alice', '/yrm1Tpz3c/zKtXTQn5EXBWi1/QVeEpydqk+3zXj/mg=', TRUE),
-	('john', 'TSPS0dpfNAwy1XVyYhu34noKe2cXfNySLq2xr4bQ+9w=', TRUE);
+	('alice', 'xOsNourVPmdSjoXpCGEMX5sEO/8GwAO4CYIQEvenyEc=', TRUE),
+	('john', 'B8GZQMWjmvk6WLDv/yEiaN9ItDprYr0MqzuW+SmDfHw=', TRUE);
 	
 INSERT INTO `authorities` (`authority_id`, `username`, `authority`)
 VALUES
