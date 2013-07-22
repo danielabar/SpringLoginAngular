@@ -4,39 +4,77 @@
 <meta charset="utf-8">
 <title>Spring Angular App - Login</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="author" content="Daniela Baron">
+
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<style type="text/css">
+body {
+	padding-top: 40px;
+	padding-bottom: 40px;
+	background-color: #f5f5f5;
+}
+
+.form-signin {
+	max-width: 300px;
+	padding: 19px 29px 29px;
+	margin: 0 auto 20px;
+	background-color: #fff;
+	border: 1px solid #e5e5e5;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	-webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .05);
+	-moz-box-shadow: 0 1px 2px rgba(0, 0, 0, .05);
+	box-shadow: 0 1px 2px rgba(0, 0, 0, .05);
+}
+
+.form-signin .form-signin-heading,.form-signin .checkbox {
+	margin-bottom: 10px;
+}
+
+.form-signin input[type="text"],.form-signin input[type="password"] {
+	font-size: 16px;
+	height: auto;
+	margin-bottom: 15px;
+	padding: 7px 9px;
+}
+</style>
+<link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+<link rel="shortcut icon" href="img/favicon.png">
 </head>
 
 <body ng-cloak ng-controller="LoginCtrl">
-<h3>Login</h3>
 
-<div ng-show="loginErrorMessage">{{ loginErrorMessage }}</div>
+	<div class="container">
 
-<form action="j_spring_security_check" method="POST" class="form-horizontal">
-	<div class="control-group">
-		<label for="username" class="control-label">User Name:</label>
-		<div class="controls">
-			<input id="username" name="j_username" type="text" />
+		<div ng-show="loginErrorMessage"class="alert alert-error">
+			{{ loginErrorMessage }}
 		</div>
-	</div>
-	<div class="control-group">
-		<label for="password" class="control-label">Password:</label>
-		<div class="controls">
-			<input id="password" name="j_password" type="password" />
-		</div>
-	</div>
-	<div class="form-actions">
-		<input type="submit" value="Log In" class="btn btn-primary"/>
-	</div>
-</form>
 
-<!-- Vendor Lib -->
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular-cookies.js"></script>
+		<form action="j_spring_security_check" method="POST" class="form-signin">
+			<h2 class="form-signin-heading">Please sign in</h2>
+			<input name="j_username" type="text" class="input-block-level" placeholder="Username" required=""> 
+			<input name="j_password" type="password" type="password" class="input-block-level" placeholder="Password" required="">
 
-<!-- Client MVC -->
-<script src="js/arch-app-login.js"></script>
-<script src="js/controllers/LoginController.js"></script>
+			<!-- TODO: Figure out remember me with Spring Security  -->
+			<!-- <label class="checkbox">
+          			<input type="checkbox" value="remember-me"> Remember me
+        		 </label> -->
+
+			<button class="btn btn-large btn-primary" type="submit">Sign in</button>
+		</form>
+
+	</div>
+	<!-- /container -->
+
+	<!-- Vendor Lib -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular-cookies.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+	<script src="js/lib/bootstrap.min.js"></script>
+
+	<!-- Client MVC -->
+	<script src="js/arch-app-login.js"></script>
+	<script src="js/controllers/LoginController.js"></script>
+
 </body>
-
 </html>
